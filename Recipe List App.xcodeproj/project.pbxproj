@@ -16,6 +16,7 @@
 		743ADDF327BC53290031E7CE /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743ADDF227BC53290031E7CE /* RecipeModel.swift */; };
 		743ADDF527BC559A0031E7CE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743ADDF427BC559A0031E7CE /* DataService.swift */; };
 		743ADDF927BEE3B90031E7CE /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743ADDF827BEE3B90031E7CE /* RecipeDetailView.swift */; };
+		744952E527C45352001F9B2E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744952E427C45352001F9B2E /* Ingredient.swift */; };
 		7490D80727BFFF9D00EB1FCD /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490D80627BFFF9C00EB1FCD /* RecipeTabView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		743ADDF227BC53290031E7CE /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		743ADDF427BC559A0031E7CE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		743ADDF827BEE3B90031E7CE /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		744952E427C45352001F9B2E /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		7490D80627BFFF9C00EB1FCD /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				743ADDF027BC50A80031E7CE /* Recipe.swift */,
+				744952E427C45352001F9B2E /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				743ADDF927BEE3B90031E7CE /* RecipeDetailView.swift in Sources */,
 				743ADDF327BC53290031E7CE /* RecipeModel.swift in Sources */,
 				743ADDDE27BC49EB0031E7CE /* RecipeListView.swift in Sources */,
+				744952E527C45352001F9B2E /* Ingredient.swift in Sources */,
 				743ADDDC27BC49EB0031E7CE /* Recipe_List_App.swift in Sources */,
 				743ADDF527BC559A0031E7CE /* DataService.swift in Sources */,
 				7490D80727BFFF9D00EB1FCD /* RecipeTabView.swift in Sources */,
