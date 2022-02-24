@@ -13,15 +13,14 @@ struct RecipeDetailView: View {
     
     var body: some View {
         
- 
-            ScrollView{
+        ScrollView{
+            VStack(alignment: .leading){
+                Image(recipe.image)
+                    .resizable()
+                    .scaledToFit()
+                
+                //MARK: - Serving size picker
                 VStack(alignment: .leading){
-                    Image(recipe.image)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    //MARK: - Serving size picker
-                    VStack(alignment: .leading){
                     Text("Select your serving size:")
                     Picker("", selection: $selectedServingSize) {
                         Text("2").tag(2)
@@ -31,41 +30,40 @@ struct RecipeDetailView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 160)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("Ingredients")
-                            .font(.headline)
-                            .padding(.vertical, 5)
-                        ForEach(recipe.ingredients){
-                            item in
-                            Text("• " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name)
-                            
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    
-                    //MARK: - Directions
-                    Divider()
-                    VStack(alignment: .leading){
-                        Text("Directions")
-                            .font(.headline)
-                            .padding(.vertical, 5)
-                        ForEach(0..<recipe.directions.count, id: \.self) { index in
-                            
-                            Text(String(index + 1) + ". " + recipe.directions[index])
-                                .padding(.bottom, 5)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    
                 }
                 
+                VStack(alignment: .leading) {
+                    Text("Ingredients")
+                        .font(.headline)
+                        .padding(.vertical, 5)
+                    ForEach(recipe.ingredients){
+                        item in
+                        Text("• " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name.lowercased())
+                        
+                    }
+                }
+                .padding(.horizontal, 5)
+                
+                //MARK: - Directions
+                Divider()
+                VStack(alignment: .leading){
+                    Text("Directions")
+                        .font(.headline)
+                        .padding(.vertical, 5)
+                    ForEach(0..<recipe.directions.count, id: \.self) { index in
+                        
+                        Text(String(index + 1) + ". " + recipe.directions[index])
+                            .padding(.bottom, 5)
+                    }
+                }
+                .padding(.horizontal, 5)
+                
             }
-            .navigationBarTitle(recipe.name)
-        
+        }
+        .navigationBarTitle(recipe.name)
     }
 }
+
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {

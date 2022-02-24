@@ -21,21 +21,62 @@ class RecipeModel: ObservableObject {
     
     static func getPortion(ingredient: Ingredient, recipeServings: Int, targetServings: Int) -> String {
         
-        //Single serving size calculation
+        var portion = ""
+        var numerator = ingredient.num ?? 1
+        var denominator = ingredient.denom ?? 1
+        var wholePortions = 0
         
+        if ingredient.num != nil {
+       
+            numerator *= targetServings
+            denominator *= recipeServings
+            
+            //Reduce franction by greatest common divisor
+            let divisor = Rational.greatestCommonDivisor(numerator, denominator)
+            numerator /= divisor
+            denominator /= divisor
+            
+            //Whole portion if num > dem
+            if numerator >= denominator {
+                wholePortions = numerator / denominator
+                //calculated remainder
+                numerator = numerator % denominator
+                
+                portion += String(wholePortions)
+            }
+            
+            //Express the remainder as a fraction
+            if numerator > 0 {
+                portion += wholePortions > 0 ? " " : ""
+                 portion += "\(numerator)/\(denominator)"
+            }
+        }
         
-        //Selected Serving size calculation
+        if var unit = ingredient.unit {
+            
+           
+            //calculate appropriate suffix
+            
+            if wholePortions > 1 {
+                
+                if unit.suffix(2) == "ch" {
+                  unit += "es"
+                } else if unit.suffix(1) == "f" {
+                        unit = String(unit.dropLast())
+                        unit += "ves"
+                        
+                } else {
+                    unit += "s"
+                }
+                }
+                
+           
+            portion += ingredient.num == nil && ingredient.denom == nil ? "" : " "
+            return portion + unit
+        }
         
-        
-        //Reduce franction by greatest common divisor
-        
-        
-        //Whole portion if num > dem
-        
-        
-        //Express the remainder as a fraction
-        
-        return String(targetServings)
+     
+        return portion
         
     }
 }
