@@ -10,10 +10,10 @@ import SwiftUI
 struct FeaturedView: View {
     
     @EnvironmentObject var model: RecipeModel
+    @State var isDetailViewPresent = false
 
     var body: some View {
-        
-    
+
         
         VStack(alignment: .leading, spacing: 0) {
             Text("Featured Recipes")
@@ -29,20 +29,28 @@ struct FeaturedView: View {
                         //Loop through recipe that only shows to be featured
                         if model.recipes[index].featured {
                             
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.white)
-                                
-                                VStack(spacing: 0){
-                                    Image(model.recipes[index].image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                    Text(model.recipes[index].name)
-                                        .padding(5)
+                            Button(action: {
+                                self.isDetailViewPresent = true
+                            }, label: {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.white)
                                     
+                                    VStack(spacing: 0){
+                                        Image(model.recipes[index].image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipped()
+                                        Text(model.recipes[index].name)
+                                            .padding(5)
+                                        
+                                    }
                                 }
-                            }
+                            })
+                                .sheet(isPresented: $isDetailViewPresent){
+                                    RecipeDetailView(recipe: model.recipes[index])
+                                }
+                            .buttonStyle(PlainButtonStyle())
                             .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
                             .cornerRadius(15)
                             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
