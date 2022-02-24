@@ -36,6 +36,7 @@ struct RecipeDetailView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 160)
                 }
+                .padding()
                 
                 VStack(alignment: .leading) {
                     Text("Ingredients")
@@ -47,7 +48,7 @@ struct RecipeDetailView: View {
                         
                     }
                 }
-                .padding(.horizontal, 5)
+                .padding(.horizontal)
                 
                 //MARK: - Directions
                 Divider()
@@ -61,7 +62,7 @@ struct RecipeDetailView: View {
                             .padding(.bottom, 5)
                     }
                 }
-                .padding(.horizontal, 5)
+                .padding(.horizontal)
                 
             }
         }
