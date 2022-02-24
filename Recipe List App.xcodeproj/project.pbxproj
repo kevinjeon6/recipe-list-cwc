@@ -19,6 +19,7 @@
 		744952E527C45352001F9B2E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744952E427C45352001F9B2E /* Ingredient.swift */; };
 		744952E727C458BD001F9B2E /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744952E627C458BC001F9B2E /* FeaturedView.swift */; };
 		74713D6927C7E08800DC96CF /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74713D6827C7E08800DC96CF /* Rational.swift */; };
+		74713D6B27C7F94000DC96CF /* RecipeHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74713D6A27C7F94000DC96CF /* RecipeHighlightsView.swift */; };
 		7490D80727BFFF9D00EB1FCD /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7490D80627BFFF9C00EB1FCD /* RecipeTabView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		744952E427C45352001F9B2E /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		744952E627C458BC001F9B2E /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
 		74713D6827C7E08800DC96CF /* Rational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
+		74713D6A27C7F94000DC96CF /* RecipeHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHighlightsView.swift; sourceTree = "<group>"; };
 		7490D80627BFFF9C00EB1FCD /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				743ADDF827BEE3B90031E7CE /* RecipeDetailView.swift */,
 				744952E627C458BC001F9B2E /* FeaturedView.swift */,
 				7490D80627BFFF9C00EB1FCD /* RecipeTabView.swift */,
+				74713D6A27C7F94000DC96CF /* RecipeHighlightsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				744952E527C45352001F9B2E /* Ingredient.swift in Sources */,
 				743ADDDC27BC49EB0031E7CE /* Recipe_List_App.swift in Sources */,
 				743ADDF527BC559A0031E7CE /* DataService.swift in Sources */,
+				74713D6B27C7F94000DC96CF /* RecipeHighlightsView.swift in Sources */,
 				74713D6927C7E08800DC96CF /* Rational.swift in Sources */,
 				744952E727C458BD001F9B2E /* FeaturedView.swift in Sources */,
 				7490D80727BFFF9D00EB1FCD /* RecipeTabView.swift in Sources */,
