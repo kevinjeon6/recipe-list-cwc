@@ -23,7 +23,7 @@ struct FeaturedView: View {
                 .bold()
                 .padding(.leading)
                 .padding(.top, 40)
-                .font(.largeTitle)
+                .font(Font.custom("Avenir Heavy", size: 24))
             
             GeometryReader { geo in
                 TabView (selection: $tabSelectedIndex) {
@@ -47,6 +47,7 @@ struct FeaturedView: View {
                                             .clipped()
                                         Text(model.recipes[index].name)
                                             .padding(5)
+                                            .font(Font.custom("Avenir", size: 15))
                                         
                                     }
                                 }
@@ -62,16 +63,17 @@ struct FeaturedView: View {
                         }
                     }
                     
-                }
+                }//TabView
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             }
             VStack (alignment: .leading, spacing: 10){
                 Text("Preparation Time:")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 Text(model.recipes[tabSelectedIndex].prepTime)
+                    .font(Font.custom("Avenir", size: 15))
                 Text("Highlights")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 RecipeHighlightsView(highlights: model.recipes[tabSelectedIndex].highlights)
             }
             .padding([.leading, .bottom])
@@ -84,7 +86,7 @@ struct FeaturedView: View {
     
     func setFeaturedRecipeIndex(){
     
-        var index = model.recipes.firstIndex { (recipe) -> Bool in
+        let index = model.recipes.firstIndex { (recipe) -> Bool in
             return recipe.featured
         }
         tabSelectedIndex = index ?? 0
