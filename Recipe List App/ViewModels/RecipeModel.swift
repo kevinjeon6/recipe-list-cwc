@@ -11,11 +11,21 @@ import Foundation
 class RecipeModel: ObservableObject {
     
     @Published var recipes = [Recipe]()
+    @Published var categories = Set<String>()
+    @Published var selectedCategory: String?
     
     init(){
         //Create an instance of data service and get the data
        
         self.recipes = DataService.getLocalData()
+        
+        //Dynamically get list of categories. Want an arrary of all the category strings. Can then use the map function. The map returns an array containing the results of mapping the given closure over the sequence's elements
+       
+        self.categories = Set(self.recipes.map { r in
+            return r.category
+            //This code of block which grabs the category and apply it to every recipe and return it as an arrary
+        })
+        self.categories.update(with: Constants.defaultListFilter)
     }
     
     
