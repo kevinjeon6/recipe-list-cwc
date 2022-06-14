@@ -16,3 +16,5 @@ class Ingredient: Identifiable, Decodable {
     var unit: String?
     
 }
+
+//Represents a new ingredient since the ingredient contains JSON Objects and not a string of arrary. Matches the data from json
